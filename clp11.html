@@ -2,7 +2,6 @@
 
 <meta name="referrer" content="no-referrer">
 <style>html,body{margin:0;padding:0;background:#000;width: 100%;height: 100%;}</style> 
-
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
 function getParam ( sname )
 {
@@ -23,7 +22,6 @@ var sv = getParam("sv");
 <div id="player">
 </div>
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
-
 function tvf(sv)
 {
 document.write('<scr'+'ipt type=\"text/javascript\">sv=['+sv+']</scr'+'ipt>');
@@ -47,13 +45,10 @@ tvf(gParam('sv'));
 
 function load_player(sv_channel)
 {
-
 var playerElement = document.getElementById('player');
 var player = new Clappr.Player({
 parentId: "#Player",
-        source : sv,
-command: 'playM3u8',
-command: 'video/m3u8',   
+      source : sv, 
  width: '100%',
  height: "100%",
  autoPlay: true,
@@ -99,10 +94,8 @@ command: 'video/m3u8',
      player.on(Clappr.Events.PLAYER_STOP, playerStop);
      function playerStop(){
              location.reload(); 
-  
 }
 }
-
  load_player(sv);
  player.play();  
  player.setVolume(100); // 1%
