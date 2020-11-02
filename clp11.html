@@ -15,6 +15,18 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+  </script>
+<script type='text/javascript'>
+//<![CDATA[
+
+document.addEventListener('click', function(evt) {
+  if (evt.target.href && evt.target.href.split('?')[0].endsWith("m3u8")) {
+    evt.preventDefault();
+    evt.stopPropagation();
+     Player.extension.sendMessage({command: 'playM3u8', url: evt.target.href}, function(response) {});
+
+//]]>
+</script>
 <script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js" type="ed0b18e16460b548745e97c1-text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="ed0b18e16460b548745e97c1-text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="ed0b18e16460b548745e97c1-text/javascript"></script> 
@@ -99,7 +111,10 @@ playbackConfig: {
 });
      player.on(Clappr.Events.PLAYER_STOP, playerStop);
     function playerStop(){location.reload();}
-            
+    evt.preventDefault();
+evt.stopPropagation();
+command: playM3u8();
+url: evt.target.href();        
 }
 
  load_player(sv);
