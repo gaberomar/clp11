@@ -96,33 +96,26 @@ playbackConfig: {
                             baseDelay: 200,
                             backoffFactor: 4,
                             fuzzFactor: 0.5,
-
           shakaOnBeforeLoad: function(shaka_player)
  {
- 
-},
-     
-            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+},  // shaka_player.getNetworkingEngine().registerRequestFilter() ...
            },
-        }
-
-  }
-
+      }  }
 });
-     player.on(Clappr.Events.PLAYER_STOP, playerStop);
-    function playerStop(){location.reload();}
-    evt.preventDefault();
+player.on(Clappr.Events.PLAYER_STOP, playerStop);
+function playerStop(){location.reload();}
+evt.preventDefault();
 evt.stopPropagation();
 command: playM3u8();
 url: evt.target.href();        
 }
-
  load_player(sv);
  player.play();  
  player.setVolume(100); // 1%
-  player.attachTo(playerElement);
-    player.load({ source: sv, command: 'video_url.m3u8', mimeType: 'application/vnd.apple.mpegurl'});         
-    </script>
+ player.attachTo(playerElement);
+ player.load({ source: sv, command: 'playM3u8', mimeType: 'application/dash-shaka-playback+xml'});         
+    
+  </script>
 
 <style>
  body {
