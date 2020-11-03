@@ -76,13 +76,6 @@ var player = new Clappr.Player({
  plugins: [DashShakaPlayback, LevelSelector],
  shakaConfiguration: {
  preferredAudioLanguage: 'pt-BR',
- hlsjsConfig: {
- xhrSetup: function(xhr, url) {
- xhr.anonymous = true;
- }},
-playbackConfig: {
- crossorigin: "anonymous"
- },
  streaming: {
    rebufferingGoal: 2,
                         bufferingGoal: 4,
@@ -113,7 +106,6 @@ url: evt.target.href();
  player.load({ source: sv, command: 'playM3u8', mimeType: 'application/dash-shaka-playback+xml'});         
     
   </script>
-
 <style>
  body {
     overflow: hidden;
