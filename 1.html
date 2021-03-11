@@ -73,17 +73,17 @@ source: sv, mimeType: 'application/x-mpegURL',
 				mediacontrol: {seekbar: "#ea6810", buttons: "#ea6810"},
 				position: "bottom-left", 
                                 watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
-				  playbackConfig: {
+				    events: {
+                            //onError: function(e) { errorPlaying() }
+                                  },
+		                playbackConfig: {
 		                crossorigin: 'use-credentials',
                                  },
                                  hlsjsConfig: {
 		                xhrSetup: function(xhr, url) {
 			         xhr.withCredentials = false;
 		                   }
-				  },
-		                events: {
-                            //onError: function(e) { errorPlaying() }
-                                  },
+				  },		             
                                   }); 
        
                          player.on(Clappr.Events.PLAYER_STOP, playerStop);
